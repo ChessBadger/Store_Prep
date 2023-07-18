@@ -24,6 +24,9 @@ namespace Store_Prep
             string filePath = @"C:\Prep\accounts.txt";
             if (!File.Exists(filePath))
             {
+                //Create the folder
+                string folderPath = @"C:\Prep";
+                Directory.CreateDirectory(folderPath);
                 // Create the file.
                 File.Create(filePath).Dispose();
             }

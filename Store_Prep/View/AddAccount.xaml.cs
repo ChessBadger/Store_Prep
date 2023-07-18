@@ -182,8 +182,11 @@ namespace Store_Prep.View
                         }
                         else
                         {
+                            // Format the account number to 4 digits with leading zeroes
+                            string formattedAccountNumber = accountNumber.ToString().PadLeft(4, '0');
+
                             // If the directory, starting from the 6th character, starts with the account number
-                            if (Path.GetFileName(dir).Substring(6).StartsWith(accountNumber.ToString()))
+                            if (Path.GetFileName(dir).Substring(5).StartsWith(formattedAccountNumber))
                             {
                                 CopyFolder(dir, destinationPath);
                             }
@@ -192,7 +195,7 @@ namespace Store_Prep.View
                     else // If not the 2nd or the 3rd item
                     {
                         // Format the account number to 4 digits with leading zeroes
-                        string formattedAccountNumber = accountNumber.ToString().PadLeft(4, '0');
+                        string formattedAccountNumber = accountNumber.ToString().PadLeft(3, '0');
 
                         // If the directory starts with the formatted account number
                         if (Path.GetFileName(dir).StartsWith(formattedAccountNumber))
