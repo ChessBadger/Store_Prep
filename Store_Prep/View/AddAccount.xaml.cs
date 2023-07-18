@@ -120,7 +120,7 @@ namespace Store_Prep.View
                     return;
                 }
 
-                // Initialize the progress bar value
+ 
 
                 // Only append the new account name to the accounts.txt and add it to the ComboBox if it's not already in the ComboBox
                 if (!_mainWindow.AccountComboBox.Items.Contains(accountName))
@@ -191,8 +191,8 @@ namespace Store_Prep.View
                     }
                     else // If not the 2nd or the 3rd item
                     {
-                        // Format the account number to 3 digits with leading zeroes
-                        string formattedAccountNumber = accountNumber.ToString().PadLeft(3, '0');
+                        // Format the account number to 4 digits with leading zeroes
+                        string formattedAccountNumber = accountNumber.ToString().PadLeft(4, '0');
 
                         // If the directory starts with the formatted account number
                         if (Path.GetFileName(dir).StartsWith(formattedAccountNumber))
